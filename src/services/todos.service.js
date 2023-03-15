@@ -11,6 +11,13 @@ const todosService = {
             }
         });
         return data;
+    },
+    post: async () => {
+        const { data } = await httpService.post(todosEndPoint, {
+            title: "New title",
+            completed: false
+        });
+        return data;
     }
 };
 

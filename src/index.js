@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import {
     completeTask,
@@ -6,6 +6,7 @@ import {
     taskDeleted,
     titleChanged,
     loadTasks,
+    createTask,
     getTaksLoadingStatus
 } from "./store/task";
 import configureStore from "./store/store";
@@ -41,7 +42,7 @@ const App = (params) => {
     return (
         <>
             <h1>app</h1>
-
+            <button onClick={() => dispatch(createTask())}>Add task</button>
             <ul>
                 {state.map((el) => (
                     <li key={el.id}>
